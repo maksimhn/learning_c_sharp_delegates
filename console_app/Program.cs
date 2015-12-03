@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace console_app
 {
 
-    public delegate void WorkPerformedHandler(int hours, WorkType workType);
+    
     class Program
     {
         static void Main(string[] args)
