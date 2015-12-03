@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace console_app
 {
 
-    public delegate void WorkPerformedHandler(int hours, WorkType workType);
+    public delegate void WorkPerformedHandler(object sender, WorkType workType);
 
     public class Worker
     {
@@ -31,7 +31,7 @@ namespace console_app
             var del = WorkPerformed as WorkPerformedHandler;
             if (del != null)
             {
-                del(hours, workType);
+                del(this, new WorkPerformedEventArgs(hours, workType));
             }
         }
 
