@@ -14,8 +14,11 @@ namespace console_app
         {
             WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
             WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
+            WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
 
-            DoWork(del1);
+            del1 += del2 + del3;
+
+            del1(5, WorkType.Golf);
 
             Console.ReadLine();
         }
@@ -33,6 +36,11 @@ namespace console_app
         static void WorkPerformed2(int hours, WorkType workType)
         {
             Console.WriteLine("Work 2 Performed");
+        }
+
+        static void WorkPerformed3(int hours, WorkType workType)
+        {
+            Console.WriteLine("Work 3 Performed");
         }
     }
 
