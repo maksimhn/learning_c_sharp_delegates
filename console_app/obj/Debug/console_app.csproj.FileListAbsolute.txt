@@ -1,1 +1,6 @@
 C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\bin\Debug\console_app.exe.config
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\bin\Debug\console_app.exe
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\bin\Debug\console_app.pdb
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\obj\Debug\console_app.csprojResolveAssemblyReference.cache
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\obj\Debug\console_app.exe
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\obj\Debug\console_app.pdb
