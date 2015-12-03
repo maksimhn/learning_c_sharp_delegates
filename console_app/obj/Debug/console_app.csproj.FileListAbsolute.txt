@@ -1,0 +1,1 @@
+C:\Users\Maksim.Hranin\Documents\Learning_Projects\learning_c_sharp_delegates\console_app\bin\Debug\console_app.exe.config
