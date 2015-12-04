@@ -17,11 +17,15 @@ namespace console_app
             var data = new ProcessData();
             BizRulesDelegate addDel = (x,y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
-            data.Process(2, 3, addDel);
+            //data.Process(2, 3, addDel);
 
-            Action<int, int> myAction = (x, y) => Console.WriteLine(x + y);
-            Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine(x * y);
-            data.ProcessAction(4, 5, myAction);
+            //Action<int, int> myAction = (x, y) => Console.WriteLine(x + y);
+            //Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine(x * y);
+            //data.ProcessAction(4, 5, myAction);
+
+            Func<int, int, int> funcAddDel = (x, y) => x + y;
+            Func<int, int, int> funcMultiplyDel = (x, y) => x * y;
+            data.ProcessFunc(4, 5, funcAddDel);
 
             //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
             //WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
