@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace console_app
 {
 
-    public delegate void WorkPerformedHandler(object sender, WorkType workType);
+    // public delegate void WorkPerformedHandler(object sender, WorkType workType);
 
     public class Worker
     {
-        public event WorkPerformedHandler WorkPerformed;
+        public event EventHandler<WorkPerformedEventArgs> WorkPerformed;
         public event EventHandler WorkCompleted;
 
         public void DoWork(int hours, WorkType workType)
@@ -28,7 +28,7 @@ namespace console_app
 
         protected virtual void OnWorkPerformed(int hours, WorkType workType)
         {
-            var del = WorkPerformed as WorkPerformedHandler;
+            var del = WorkPerformed as EventHandler<WorkPerformedEventArgs>;
             if (del != null)
             {
                 del(this, new WorkPerformedEventArgs(hours, workType));
