@@ -14,11 +14,14 @@ namespace console_app
     {
         static void Main(string[] args)
         {
+            var data = new ProcessData();
             BizRulesDelegate addDel = (x,y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
-
-            var data = new ProcessData();
             data.Process(2, 3, addDel);
+
+            Action<int, int> myAction = (x, y) => Console.WriteLine(x + y);
+            Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine(x * y);
+            data.ProcessAction(4, 5, myAction);
 
             //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
             //WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
