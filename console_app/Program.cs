@@ -7,11 +7,19 @@ using System.Threading.Tasks;
 namespace console_app
 {
 
+    public delegate int BizRulesDelegate(int x, int y);
+
     
     class Program
     {
         static void Main(string[] args)
         {
+            BizRulesDelegate addDel = (x,y) => x + y;
+            BizRulesDelegate multiplyDel = (x, y) => x * y;
+
+            var data = new ProcessData();
+            data.Process(2, 3, addDel);
+
             //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
             //WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
             //WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
@@ -24,15 +32,9 @@ namespace console_app
 
             var worker = new Worker();
 
-            worker.WorkPerformed += delegate(object sender, WorkPerformedEventArgs e)
-            {
-                Console.WriteLine(e.Hours + " " + e.WorkType);
-            };
+            worker.WorkPerformed += (s,e) => Console.WriteLine(e.Hours + " " + e.WorkType);
             // worker.WorkCompleted += worker_WorkCompleted;
-            worker.WorkCompleted += delegate(object sender, EventArgs e)
-            {
-                Console.WriteLine("Worker is done");
-            };
+            worker.WorkCompleted += (s,e) => Console.WriteLine("Worker is done");
             worker.DoWork(8, WorkType.GenerateReports);
         }
 
