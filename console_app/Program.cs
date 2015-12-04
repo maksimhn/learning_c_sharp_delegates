@@ -23,7 +23,21 @@ namespace console_app
             //Console.ReadLine();
 
             var worker = new Worker();
-            
+
+            worker.WorkPerformed += worker_WorkPerformed;
+            worker.WorkCompleted += worker_WorkCompleted;
+            worker.WorkCompleted -= worker_WorkCompleted;
+            worker.DoWork(8, WorkType.GenerateReports);
+        }
+
+        static void worker_WorkPerformed(object sender, WorkPerformedEventArgs e)
+        {
+            Console.WriteLine(e.Hours + " " + e.WorkType);
+        }
+
+        static void worker_WorkCompleted(object sender, EventArgs e)
+        {
+            Console.WriteLine("Worker is done");
         }
 
         //static void DoWork(WorkPerformedHandler del)
